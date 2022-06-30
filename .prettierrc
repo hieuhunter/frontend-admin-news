@@ -1,0 +1,12 @@
+{
+	"endOfLine": "lf",
+	"useTabs": true,
+	"printWidth": 166,
+	"tabWidth": 4,
+	"trailingComma": "none",
+	"singleQuote": true,
+	"semi": true,
+	"importOrder": ["^src|\\.\\/(.*)$"],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}
