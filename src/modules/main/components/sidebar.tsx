@@ -11,7 +11,8 @@ import {
 	PlusCircleIconComponent,
 	TachometerIconComponent,
 	TimesIconComponent,
-	UserIconComponent
+	UserIconComponent,
+	BookIconComponent
 } from 'src/components/Icon/components';
 import ImageComponent from 'src/components/Image/components';
 import LinkComponent from 'src/components/Link/components';
@@ -127,6 +128,73 @@ const SidebarComponent = () => {
 														<li>
 															<NavLinkComponent
 																to={`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_USER}/${routeConstant.ROUTE_NAME_MAIN_USER_NEW}`}
+																className="inline-flex items-center w-full pl-8 pr-4 py-2 text-base rounded-lg focus:shadow-outline"
+																classNameActive="bg-gray-500 hover:bg-gray-500 font-bold text-white"
+																classNameNotActive="hover:bg-gray-900 hover:text-white text-gray-400"
+															>
+																<PlusCircleIconComponent className="w-6 h-6" />
+																<span className="ml-4">New</span>
+															</NavLinkComponent>
+														</li>
+													</Disclosure.Panel>
+												</Transition>
+											</Fragment>
+										)}
+									</Disclosure>
+								)}
+								{authCurrent.data?.role && [userConstant.USER_ROLE_OWNER, userConstant.USER_ROLE_ADMIN].includes(authCurrent.data.role) && (
+									<Disclosure
+										as="li"
+										defaultOpen={[
+											`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}`,
+											`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}/${routeConstant.ROUTE_NAME_MAIN_POST_NEW}`
+										].includes(location.pathname)}
+									>
+										{({ open }) => (
+											<Fragment>
+												<Disclosure.Button
+													className={classNames(
+														'inline-flex items-center w-full px-4 py-2 text-base rounded-lg focus:shadow-outline hover:bg-gray-900 hover:text-white',
+														[
+															`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}`,
+															`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}/${routeConstant.ROUTE_NAME_MAIN_POST_NEW}`
+														].includes(location.pathname)
+															? 'bg-gray-900 text-white'
+															: 'text-gray-400'
+													)}
+												>
+													<BookIconComponent className="w-6 h-6" />
+													<span className="ml-4">Post</span>
+													<ChevronLeftIconComponent
+														className={classNames('w-6 h-6 ml-auto', {
+															'transform -rotate-90': open
+														})}
+													/>
+												</Disclosure.Button>
+												<Transition
+													as={Fragment}
+													enter="transition duration-100 ease-out"
+													enterFrom="transform scale-95 opacity-0"
+													enterTo="transform scale-100 opacity-100"
+													leave="transition duration-75 ease-out"
+													leaveFrom="transform scale-100 opacity-100"
+													leaveTo="transform scale-95 opacity-0"
+												>
+													<Disclosure.Panel static as="ul" className="space-y-4 mt-4">
+														<li>
+															<NavLinkComponent
+																to={`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}`}
+																className="inline-flex items-center w-full pl-8 pr-4 py-2 text-base rounded-lg focus:shadow-outline"
+																classNameActive="bg-gray-500 hover:bg-gray-500 font-bold text-white"
+																classNameNotActive="hover:bg-gray-900 hover:text-white text-gray-400"
+															>
+																<ListIconComponent className="w-6 h-6" />
+																<span className="ml-4">List</span>
+															</NavLinkComponent>
+														</li>
+														<li>
+															<NavLinkComponent
+																to={`/${routeConstant.ROUTE_NAME_MAIN}/${routeConstant.ROUTE_NAME_MAIN_POST}/${routeConstant.ROUTE_NAME_MAIN_POST_NEW}`}
 																className="inline-flex items-center w-full pl-8 pr-4 py-2 text-base rounded-lg focus:shadow-outline"
 																classNameActive="bg-gray-500 hover:bg-gray-500 font-bold text-white"
 																classNameNotActive="hover:bg-gray-900 hover:text-white text-gray-400"

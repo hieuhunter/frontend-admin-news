@@ -14,6 +14,7 @@ import TachometerIconComponent from './Tachometer';
 import TimesIconComponent from './Times';
 import TrashIconComponent from './Trash';
 import UserIconComponent from './Users';
+import BookIconComponent from './Book';
 
 export {
 	TachometerIconComponent,
@@ -31,5 +32,6 @@ export {
 	AngleDoubleLeftIconComponent,
 	AngleDoubleRightIconComponent,
 	AngleLeftIconComponent,
-	AngleRightIconComponent
+	AngleRightIconComponent,
+	BookIconComponent
 };

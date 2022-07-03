@@ -17,6 +17,7 @@ const config = {
 			UPLOAD_IMAGE: '/images/upload',
 			SETTING: '/admin/settings',
 			USER: '/admin/users',
+			POST: '/admin/posts',
 		}
 	},
 	REQUEST: {

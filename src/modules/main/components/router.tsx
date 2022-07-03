@@ -3,6 +3,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 
 import * as routeConstant from 'src/constants/route';
+import PostComponent from './post/component';
 
 const DashboardComponent = lazy(() => import('./dashboard/components'));
 const SettingComponent = lazy(() => import('./setting/components'));
@@ -32,6 +33,14 @@ const MainRouter = () => {
 			element: (
 				<Suspense fallback={null}>
 					<UserComponent />
+				</Suspense>
+			)
+		},
+		{
+			path: `${routeConstant.ROUTE_NAME_MAIN_POST}/*`,
+			element: (
+				<Suspense fallback={null}>
+					<PostComponent />
 				</Suspense>
 			)
 		},

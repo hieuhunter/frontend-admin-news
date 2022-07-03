@@ -10,4 +10,9 @@ export const ROUTE_NAME_MAIN_PROFILE = 'profile';
 export const ROUTE_NAME_MAIN_USER = 'users';
 export const ROUTE_NAME_MAIN_USER_NEW = 'new';
 export const ROUTE_NAME_MAIN_USER_EDIT = 'edit';
+
+export const ROUTE_NAME_MAIN_POST = 'posts';
+export const ROUTE_NAME_MAIN_POST_NEW = 'new';
+export const ROUTE_NAME_MAIN_POST_EDIT = 'edit';
+
 export const ROUTE_NAME_MAIN_SETTING = 'settings';
