@@ -5,6 +5,9 @@ import ImageFormComponent from './Image';
 import InputFormComponent from './Input';
 import SelectFormComponent from './Select';
 import ToggleFormComponent from './Toggle';
+import TextareaFormComponent from './Textarea';
+import EditorInputFormComponent from './EditorInput';
+import CreatableSelectFormComponent from './CreatableSelect';
 
 type FormComponentProps<Values> = {
 	className?: string;
@@ -41,5 +44,8 @@ export default Object.assign(FormComponent, {
 	Select: SelectFormComponent,
 	Checkbox: CheckboxFormComponent,
 	Image: ImageFormComponent,
-	Toggle: ToggleFormComponent
+	Toggle: ToggleFormComponent,
+	Textarea: TextareaFormComponent,
+	EditorInput: EditorInputFormComponent,
+	CreatableSelect: CreatableSelectFormComponent
 });

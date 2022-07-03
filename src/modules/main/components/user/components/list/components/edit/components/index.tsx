@@ -106,7 +106,7 @@ const EditListUserComponent = () => {
 						password: values.password
 					}),
 					...(result && {
-						avatar: result.image_name
+						avatar: result.image
 					})
 				};
 				userService

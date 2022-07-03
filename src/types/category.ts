@@ -11,6 +11,14 @@ export interface CreateCategory {
     slug: string;
 }
 
+export interface ListCategory {
+    page: number;
+    limit: number;
+    sort_direction: string;
+    sort_by: string;
+    q: string;
+}
+
 export interface UpdateCategory extends CreateCategory { }
 
 export interface CreateCategoryFormik extends CreateCategory { }

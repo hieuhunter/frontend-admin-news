@@ -18,6 +18,7 @@ const config = {
 			SETTING: '/admin/settings',
 			USER: '/admin/users',
 			POST: '/admin/posts',
+			CATEGORY:'/admin/categories'
 		}
 	},
 	REQUEST: {

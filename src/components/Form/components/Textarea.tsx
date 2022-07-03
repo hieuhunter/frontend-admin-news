@@ -1,19 +1,15 @@
 import classNames from 'classnames';
-import { Fragment } from 'react';
 
 type Props = {
 	className?: string;
 	name: string;
 	label?: string;
-	options: Array<{ value: any; label: any }>;
 	horizontal?: boolean;
 	error?: string;
 	touched?: boolean;
-	loading?: boolean
-	mustSelect?: boolean
-} & React.ComponentPropsWithoutRef<'select'>;
+} & React.ComponentPropsWithoutRef<'textarea'>;
 
-const SelectFormComponent = ({ className, name, label, options, horizontal = false, error, touched = false, loading = false, mustSelect = false, ...props }: Props) => {
+const TextareaFormComponent = ({ className, name, label, horizontal = false, error, touched = false, ...props }: Props) => {
 	return (
 		<div
 			className={classNames(
@@ -29,7 +25,7 @@ const SelectFormComponent = ({ className, name, label, options, horizontal = fal
 				</label>
 			)}
 			<div className="relative">
-				<select
+				<textarea
 					{...props}
 					name={name}
 					className={classNames(
@@ -38,25 +34,11 @@ const SelectFormComponent = ({ className, name, label, options, horizontal = fal
 							'focus:ring-red-600 border-red-600': error && touched
 						}
 					)}
-				>
-					{loading ? (
-						<option value={0}>Loading...</option>
-					) : !options.length ? (
-						<option value={0}>Empty</option>
-					) : (
-						<Fragment>
-							{mustSelect && <option value={0}>---Select---</option>}
-							{options.map((option, index) => (
-								<option value={option.value} key={index}>
-									{option.label}
-								</option>))}
-						</Fragment>
-					)}
-				</select>
+				/>
 			</div>
 			{error && touched && <div className="text-red-700 mt-1 text-sm">{error}</div>}
 		</div>
 	);
 };
 
-export default SelectFormComponent;
+export default TextareaFormComponent;

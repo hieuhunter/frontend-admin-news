@@ -102,7 +102,7 @@ const NewListUserComponent = () => {
 					role: values.role,
 					actived: values.actived,
 					...(result && {
-						avatar: result.image_name
+						avatar: result.image
 					})
 				};
 				userService

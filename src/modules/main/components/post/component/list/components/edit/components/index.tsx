@@ -106,7 +106,7 @@ const EditListPostComponent = () => {
                         password: values.password
                     }),
                     ...(result && {
-                        avatar: result.image_name
+                        avatar: result.image
                     })
                 };
                 userService
@@ -175,7 +175,7 @@ const EditListPostComponent = () => {
 
     return (
         <div className="h-full w-full fixed overflow-x-hidden overflow-y-auto z-50 top-0 left-0">
-            <div className="min-h-full flex items-center py-8 sm:px-16 bg-gray-900/50 z-40 justify-center">
+            <div className="min-h-full flex items-center py-8 sm:px-14 bg-gray-900/50 z-40 justify-center">
                 <CardComponent
                     className="max-w-5xl z-50"
                     title="Edit user"

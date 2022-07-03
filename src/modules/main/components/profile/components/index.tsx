@@ -85,7 +85,7 @@ const ProfileComponent = () => {
 						password: values.password
 					}),
 					...(result && {
-						avatar: result.image_name
+						avatar: result.image
 					})
 				};
 				profileService
