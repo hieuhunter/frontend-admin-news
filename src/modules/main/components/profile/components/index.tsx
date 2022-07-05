@@ -85,7 +85,7 @@ const ProfileComponent = () => {
 						password: values.password
 					}),
 					...(result && {
-						avatar: result.image
+						avatar: result.image_name
 					})
 				};
 				profileService
@@ -108,7 +108,7 @@ const ProfileComponent = () => {
 					formikHelpers.setErrors(validationError.response?.data?.errors);
 				})
 			)
-			.finally(() => {});
+			.finally(() => { });
 	};
 
 	useOnceEffect(() => {

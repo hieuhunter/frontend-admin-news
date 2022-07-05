@@ -6,6 +6,7 @@ import * as profileEpic from './profile/epics';
 import * as settingEpic from './setting/epics';
 import * as userEpic from './user/epics';
 import * as postEpic from './post/epics';
+import * as categoryEpic from './category/epics';
 
 
 export default combineEpics(
@@ -14,5 +15,6 @@ export default combineEpics(
 	...Object.values(userEpic),
 	...Object.values(profileEpic),
 	...Object.values(settingEpic),
-	...Object.values(postEpic)
+	...Object.values(postEpic),
+	...Object.values(categoryEpic)
 );

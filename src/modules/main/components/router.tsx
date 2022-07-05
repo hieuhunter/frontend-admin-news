@@ -4,10 +4,12 @@ import type { RouteObject } from 'react-router-dom';
 
 import * as routeConstant from 'src/constants/route';
 import PostComponent from './post/component';
+import CategoryComponent from './category/component';
 
 const DashboardComponent = lazy(() => import('./dashboard/components'));
 const SettingComponent = lazy(() => import('./setting/components'));
 const UserComponent = lazy(() => import('./user/components'));
+
 const ProfileComponent = lazy(() => import('./profile/components'));
 
 const MainRouter = () => {
@@ -41,6 +43,14 @@ const MainRouter = () => {
 			element: (
 				<Suspense fallback={null}>
 					<PostComponent />
+				</Suspense>
+			)
+		},
+		{
+			path: `${routeConstant.ROUTE_NAME_MAIN_CATEGORY}/*`,
+			element: (
+				<Suspense fallback={null}>
+					<CategoryComponent />
 				</Suspense>
 			)
 		},

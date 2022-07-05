@@ -106,7 +106,7 @@ const EditListUserComponent = () => {
 						password: values.password
 					}),
 					...(result && {
-						avatar: result.image
+						avatar: result.image_name
 					})
 				};
 				userService
@@ -147,7 +147,7 @@ const EditListUserComponent = () => {
 					formikHelpers.setErrors(validationError.response?.data?.errors);
 				})
 			)
-			.finally(() => {});
+			.finally(() => { });
 	};
 
 	const userShowDataCallback = useCallback(() => {

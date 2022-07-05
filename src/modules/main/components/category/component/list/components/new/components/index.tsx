@@ -32,7 +32,7 @@ import { Category } from 'src/types/category';
 import CreatableSelect from 'react-select/creatable';
 import _ from 'lodash';
 
-const NewListPostComponent = () => {
+const NewListCategoryComponent = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const postList = useAppSelector(selectPostList);
@@ -359,4 +359,4 @@ const NewListPostComponent = () => {
     );
 };
 
-export default NewListPostComponent;
+export default NewListCategoryComponent;

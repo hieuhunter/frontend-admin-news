@@ -21,7 +21,7 @@ export function instanceOfBlobInfo(object: any): object is BlobInfo {
 }
 
 export interface Image {
-	image: string;
+	image_name: string;
 	image_url: string;
 }
 

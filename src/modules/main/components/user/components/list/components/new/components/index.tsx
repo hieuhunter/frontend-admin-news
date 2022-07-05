@@ -102,7 +102,7 @@ const NewListUserComponent = () => {
 					role: values.role,
 					actived: values.actived,
 					...(result && {
-						avatar: result.image
+						avatar: result.image_name
 					})
 				};
 				userService
@@ -143,7 +143,7 @@ const NewListUserComponent = () => {
 					formikHelpers.setErrors(validationError.response?.data?.errors);
 				})
 			)
-			.finally(() => {});
+			.finally(() => { });
 	};
 
 	useLockedScroll();

@@ -36,7 +36,7 @@ import { Image } from 'src/types/image';
 import { UpdatePostFormik } from 'src/types/post';
 import _ from 'lodash';
 
-const EditListPostComponent = () => {
+const EditListCategoryComponent = () => {
     const navigate = useNavigate();
     const params = useParams();
     const dispatch = useAppDispatch();
@@ -391,4 +391,4 @@ const EditListPostComponent = () => {
     );
 };
 
-export default EditListPostComponent;
+export default EditListCategoryComponent;

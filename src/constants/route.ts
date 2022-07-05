@@ -15,4 +15,8 @@ export const ROUTE_NAME_MAIN_POST = 'posts';
 export const ROUTE_NAME_MAIN_POST_NEW = 'new';
 export const ROUTE_NAME_MAIN_POST_EDIT = 'edit';
 
+export const ROUTE_NAME_MAIN_CATEGORY = 'categories';
+export const ROUTE_NAME_MAIN_CATEGORY_NEW = 'new';
+export const ROUTE_NAME_MAIN_CATEGORY_EDIT = 'edit';
+
 export const ROUTE_NAME_MAIN_SETTING = 'settings';
