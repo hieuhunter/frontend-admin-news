@@ -4,30 +4,30 @@ import useAppDispatch from 'src/hooks/useAppDispatch';
 import useAppSelector from 'src/hooks/useAppSelector';
 import useDebouncedCallback from 'src/hooks/useDebouncedCallback';
 import {
-	postListFilterQRequestAction,
-	postListFilterQTempRequestAction,
-	postListFilterSortByRequestAction,
-	postListFilterSortDirectionRequestAction
-} from 'src/store/post/actions';
-import { selectPostList } from 'src/store/post/selectors';
+	categoryListFilterQRequestAction,
+	categoryListFilterQTempRequestAction,
+	categoryListFilterSortByRequestAction,
+	categoryListFilterSortDirectionRequestAction
+} from 'src/store/category/actions';
+import { selectCategoryList } from 'src/store/category/selectors';
 
 const FilterListCategoryComponent = () => {
 	const dispatch = useAppDispatch();
-	const postList = useAppSelector(selectPostList);
+	const categoryList = useAppSelector(selectCategoryList);
 
-	const postListFilterQDebouncedCallback = useDebouncedCallback((nextValue: string) => dispatch(postListFilterQRequestAction(nextValue)));
+	const categoryListFilterQDebouncedCallback = useDebouncedCallback((nextValue: string) => dispatch(categoryListFilterQRequestAction(nextValue)));
 
 	const onChangeSortBy = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		dispatch(postListFilterSortByRequestAction(event.target.value));
+		dispatch(categoryListFilterSortByRequestAction(event.target.value));
 	};
 
 	const onChangeSortDirection = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		dispatch(postListFilterSortDirectionRequestAction(event.target.value));
+		dispatch(categoryListFilterSortDirectionRequestAction(event.target.value));
 	};
 
 	const onChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-		dispatch(postListFilterQTempRequestAction(event.target.value));
-		postListFilterQDebouncedCallback(event.target.value);
+		dispatch(categoryListFilterQTempRequestAction(event.target.value));
+		categoryListFilterQDebouncedCallback(event.target.value);
 	};
 
 	return (
@@ -37,29 +37,17 @@ const FilterListCategoryComponent = () => {
 					className="mr-0 sm:mr-4 mb-4 sm:mb-0 sm:w-36 min-w-full sm:min-w-0"
 					label="Sort by"
 					onChange={onChangeSortBy}
-					value={postList.filter.sort_by}
+					value={categoryList.filter.sort_by}
 					name="sort_by"
 					id="sort_by"
 					options={[
 						{
-							value: 'title',
-							label: 'Title'
+							value: 'name',
+							label: 'Name'
 						},
 						{
 							value: 'slug ',
 							label: 'Slug'
-						},
-						{
-							value: 'excerpt',
-							label: 'Excerpt'
-						},
-						{
-							value: 'content',
-							label: 'Content'
-						},
-						{
-							value: 'status',
-							label: 'Status'
 						},
 						{
 							value: 'updated_at',
@@ -75,7 +63,7 @@ const FilterListCategoryComponent = () => {
 					className="sm:w-36 min-w-full sm:min-w-0"
 					label="Sort direction"
 					onChange={onChangeSortDirection}
-					value={postList.filter.sort_direction}
+					value={categoryList.filter.sort_direction}
 					name="sort_direction"
 					id="sort_direction"
 					options={[
@@ -97,7 +85,7 @@ const FilterListCategoryComponent = () => {
 					type="text"
 					placeholder="Enter keyword"
 					onChange={onChangeSearch}
-					value={postList.filter.q_temp}
+					value={categoryList.filter.q_temp}
 					name="q"
 					id="q"
 				/>

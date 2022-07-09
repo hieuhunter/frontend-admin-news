@@ -94,10 +94,10 @@ const ListCategoryComponent = () => {
 
 	return (
 		<Fragment>
-			<BreadcrumbComponent className="mb-4">List Categorys</BreadcrumbComponent>
+			<BreadcrumbComponent className="mb-4">List Categories</BreadcrumbComponent>
 			<div className="grid grid-cols-1 gap-4">
 				<div className="col-span-1 w-full">
-					<CardComponent title="List categorys">
+					<CardComponent title="List categories">
 						<div className="relative">
 							<FilterListCategoryComponent />
 							{categoryList.loading ? (
@@ -106,10 +106,10 @@ const ListCategoryComponent = () => {
 								<TableComponent>
 									<TableComponent.Thead>
 										<TableComponent.Tr>
-											<TableComponent.Th>Image</TableComponent.Th>
-											<TableComponent.Th className='w-[20%]'>Title</TableComponent.Th>
-											<TableComponent.Th className='w-[30%]'>Excerpt</TableComponent.Th>
-											<TableComponent.Th>Categories</TableComponent.Th>
+
+											<TableComponent.Th className='w-[20%]'>Category</TableComponent.Th>
+											<TableComponent.Th className='w-[30%]'>Slug</TableComponent.Th>
+
 											<TableComponent.Th>Updated at</TableComponent.Th>
 											<TableComponent.Th>Created at</TableComponent.Th>
 											<TableComponent.Th>
@@ -127,26 +127,14 @@ const ListCategoryComponent = () => {
 										) : (
 											categoryList.data.map((categorys) => (
 												<TableComponent.Tr key={categorys.id}>
-													<TableComponent.Td>
-														<div className="flex items-center">
-															<div className="flex-shrink-0 h-10 w-10">
-																<img className="h-10 w-10 rounded-full" src={categorys.name} alt='' />
-															</div>
-															{/* <div className="ml-4">
-																<div className="text-sm font-medium text-gray-900">
-																	{categorys.title}
-																</div>
-																<div className="text-sm text-gray-500">{categorys.excerpt}</div>
-															</div> */}
-														</div>
-													</TableComponent.Td>
+
 													<TableComponent.Td>
 														{categorys.name}
 													</TableComponent.Td>
 													<TableComponent.Td>
-														{categorys.name}
+														{categorys.slug}
 													</TableComponent.Td>
-													<TableComponent.Td>{categorys.name}</TableComponent.Td>
+
 													<TableComponent.Td className="whitespace-nowrap">{time.ago(categorys.updated_at)}</TableComponent.Td>
 													<TableComponent.Td className="whitespace-nowrap">{time.format(categorys.created_at)}</TableComponent.Td>
 													<TableComponent.Td>
